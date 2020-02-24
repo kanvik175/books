@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/', 'BooksController@index');
+Route::get('/', 'BooksController@list');
