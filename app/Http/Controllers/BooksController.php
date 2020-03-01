@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Book;
 use App\Genre;
 
@@ -19,6 +20,14 @@ class BooksController extends Controller
     public function show(Book $book)
     {
         return view('books.show', compact('book'));
+    }
+
+    public function search()
+    {
+        $searchString = request('q');
+        $books =  Book::where('title', 'LIKE', "%{$searchString}%")->paginate(10)->appends(['q' => $searchString]);
+
+        return view('books.list', compact('books'));
     }
 
 }
