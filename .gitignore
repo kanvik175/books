@@ -6,6 +6,7 @@
 /vendor
 /.idea
 /public/img
+/public/file
 .env
 .env.backup
 .phpunit.result.cache

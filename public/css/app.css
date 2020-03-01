@@ -10888,3 +10888,15 @@ a.text-dark:focus {
   width: 150px;
 }
 
+.book__img {
+  max-width: 260px;
+}
+
+.book__property-list tr {
+  height: 40px;
+}
+
+.book__property-list th {
+  width: 100px;
+}
+

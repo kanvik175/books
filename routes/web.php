@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'BooksController@list');
+Route::get('book/{book}', 'BooksController@show');
