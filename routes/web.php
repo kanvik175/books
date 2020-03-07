@@ -13,4 +13,8 @@
 
 Route::get('/', 'BookController@list');
 Route::get('book/{book}', 'BookController@show');
+
 Route::get('search', 'BookController@search');
+
+Route::get('contact', 'ContactController@create');
+Route::post('contact', 'ContactController@store');

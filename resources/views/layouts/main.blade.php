@@ -12,9 +12,10 @@
 </head>
 <div id="app">
 
+    <div class="container">
+
     @include('blocks.nav')
 
-    <div class="container">
         <div class="row">
             <div class="col-3">
                 @include('blocks.sidebar')
@@ -23,9 +24,10 @@
                 @yield('content')
             </div>
         </div>
-    </div>
 
     @include('blocks.footer')
+
+    </div>
 
 </div>
 
