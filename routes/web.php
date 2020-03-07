@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', 'BooksController@list');
-Route::get('book/{book}', 'BooksController@show');
-Route::get('search', 'BooksController@search');
+Route::get('/', 'BookController@list');
+Route::get('book/{book}', 'BookController@show');
+Route::get('search', 'BookController@search');
