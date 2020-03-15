@@ -10,26 +10,19 @@ use Illuminate\Support\Str;
 
 class Book extends Model
 {
-
-    protected $table = 'tblBooks';
-
-    protected $primaryKey = 'id_book';
-
     public function genres()
     {
-        return $this->belongsToMany(Genre::class, 'tblBookGenre',
-            'id_book', 'id_genre');
+        return $this->belongsToMany(Genre::class);
     }
 
     public function authors()
     {
-        return $this->belongsToMany(Author::class, 'tblBookAuthor',
-            'id_book', 'id_author');
+        return $this->belongsToMany(Author::class);
     }
 
     public function files()
     {
-        return $this->hasMany(File::class, 'id_book', 'id_file');
+        return $this->hasMany(File::class);
     }
 
     public function getShortDescription()
@@ -51,7 +44,7 @@ class Book extends Model
     {
         preg_match('/\d{4}/', $value, $matches);
 
-        return $matches[0] ?: $value;
+        return !empty($matches) ? $matches[0] : $value;
     }
 
 }

@@ -7,13 +7,8 @@ use App\Book;
 
 class Author extends Model
 {
-    protected $table = 'tblAuthors';
-
-    protected $primaryKey = 'id_author';
-
     public function books()
     {
-        $this->belongsToMany(Book::class, 'tblBookAuthor',
-            'id_book', 'id_author');
+        $this->belongsToMany(Book::class);
     }
 }

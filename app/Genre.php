@@ -7,14 +7,9 @@ use App\Book;
 
 class Genre extends Model
 {
-    protected $table = 'tblGenres';
-
-    protected $primaryKey = 'id_genre';
-
     public function books()
     {
-        $this->belongsToMany(Book::class, 'tblBookGenre',
-            'id_book', 'id_genre');
+        $this->belongsToMany(Book::class);
     }
 
     public function scopeMain($query)
